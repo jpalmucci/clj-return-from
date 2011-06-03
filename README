@@ -34,11 +34,11 @@ drop into Java. I've done that so you don't have to.
 2) clj-return-from contains code to check that the block and the
 return-from are on the same thread.
 
-3) clj-return blocks have lexical scope. If you create a named block
+3) clj-return-from blocks have lexical scope. If you create a named block
 that calls a function that happens to create a block with the same
 name, they won't conflict.
 
-4) clj-return is more concise than try / throw.
+4) clj-return-from is more concise than try / throw.
 
 To install, add:
 
