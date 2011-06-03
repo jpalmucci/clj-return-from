@@ -21,6 +21,12 @@ EX:
 
 ==> :bar
 
+to install, add 
+
+:dependencies [[clj-return-from "1.0.0"]]
+
+to your project.clj file. The code is hosted on clojars.
+
 ## License
 
 Copyright (C) 2010 Jeff Palmucci
