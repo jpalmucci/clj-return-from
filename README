@@ -24,6 +24,22 @@ EX:
 Note: If you attempt to return-from a block on a different thread
 than the one that established the block, you will get a runtime error.
 
+I implemented clj-return-from for several reasons:
+
+1) implementing non-local exits requires that you throw a custom
+exception (that must at least hold the return value). That requires
+implementing a named class that extends Throwable. That requires you
+drop into Java. I've done that so you don't have to.
+
+2) clj-return-from contains code to check that the block and the
+return-from are on the same thread.
+
+3) clj-return blocks have lexical scope. If you create a named block
+that calls a function that happens to create a block with the same
+name, they won't conflict.
+
+4) clj-return is more concise than try / throw.
+
 To install, add:
 
 :dependencies [[clj-return-from "1.0.0"]]
