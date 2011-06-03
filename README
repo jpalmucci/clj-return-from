@@ -1,0 +1,28 @@
+# clj-return-from
+
+An implementation of common lisp's return-from for clojure
+
+## Usage
+
+The 'block' macro will establish a block with lexical scope. In this
+lexical scope, a return-from-<blockname> macro can be used to
+immediately exit the block with some return value.
+
+EX:
+
+(block foo
+       (+ 1 2))
+
+==> 3
+
+(block foo
+       (return-from-foo :bar)
+       (+ 1 2))
+
+==> :bar
+
+## License
+
+Copyright (C) 2010 Jeff Palmucci
+
+Distributed under the Eclipse Public License, the same as Clojure.
