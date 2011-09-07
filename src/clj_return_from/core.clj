@@ -1,5 +1,5 @@
 (ns clj-return-from.core
-  (:use clojure.contrib.macro-utils))
+  (:use clojure.tools.macro))
 
 (defn return-from* [name thread expr]
   (if (not= (Thread/currentThread) thread)

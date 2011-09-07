@@ -1,6 +1,5 @@
 (ns clj-return-from.test.core
-  (:use [clj-return-from.core] :reload)
-  (:use [clojure.test]))
+  (:use clj-return-from.core clojure.test))
 
 (defn nested-fn-call [closure]
   (block x
